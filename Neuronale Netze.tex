@@ -35,4 +35,121 @@ Wo werden neuronale Netze angewendet?
 \item Soziale Netzwerke
 \end{itemize}
 \end{frame}
+
+\begin{frame}[t]{Aufbau neuronaler Netze (1/3)}
+\begin{itemize}
+\item Sehr stark an natürliche neuronale Netze angelehnt
+\begin{itemize}
+\item Neuronen mit Synapsen verbunden
+\item Synapsengewicht regelt Stromfluss zwischen zwei Neuronen
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\scalebox{.75}{
+\begin{tikzpicture}[thick, main/.style={draw, circle, inner sep=0pt, minimum width=25pt}]
+\node (a1) at (1, 2) {\dots};
+\node (a2) at (0, 0) {\dots};
+\node (a3) at (1, -2) {\dots};
+
+\node (b1) at (5, 2) {\dots};
+\node[main, fill=blue!25] (b2) at (3, 0) {$n_{0, 0}$};
+\node (b3) at (5, -2) {\dots};
+
+\node (w1) at (5, 0) {$w_{0, 0, 0}$};
+
+\node[main, fill=blue!25] (c2) at (7, 0) {$n_{1, 0}$};
+\node (d2) at (9, 0) {\dots};
+
+\draw[dotted] (a1) -- (b2);
+\draw[dotted] (a2) -- (b2);
+\draw[dotted] (a3) -- (b2);
+
+\draw[dotted] (b1) -- (c2);
+\draw[-] (b2) -- (w1) -- (c2);
+\draw[dotted] (b3) -- (c2);
+
+\draw[dotted] (c2) -- (d2);
+\end{tikzpicture}
+}
+\end{center}
+\end{frame}
+\begin{frame}[t]{Aufbau neuronaler Netze (2/3)}
+\begin{itemize}
+\item Ausgaben von Neuronen und Synapsengewichte werden als Zahl betrachtet $\rightarrow$ Berechenbarkeit
+\item Einteilung der Neuronen in unterschiedliche Schichten
+\begin{itemize}
+\item Input Layer
+\item Hidden Layer
+\item Output Layer
+\end{itemize}
+\end{itemize}
+
+\begin{center}
+\scalebox{.5}{
+\begin{tikzpicture}[thick, main/.style={draw, circle, inner sep=0pt, minimum width=25pt}]
+\node[main, fill=red!25] (i1) at (0, 0.75) {};
+\node[main, fill=red!25] (i2) at (0, 2.25) {};  
+\node[main, fill=red!25] (i3) at (0, 3.75) {};
+\node[main, fill=red!25] (i4) at (0, 5.25) {};
+
+\node[main, fill=blue!25] (h11) at (3, 0) {};  
+\node[main, fill=blue!25] (h12) at (3, 1.5) {};
+\node[main, fill=blue!25] (h13) at (3, 3) {};
+\node[main, fill=blue!25] (h14) at (3, 4.5) {};
+\node[main, fill=blue!25] (h15) at (3, 6) {};
+
+\node[main, fill=blue!25] (h21) at (6, 0) {};  
+\node[main, fill=blue!25] (h22) at (6, 1.5) {};
+\node[main, fill=blue!25] (h23) at (6, 3) {};
+\node[main, fill=blue!25] (h24) at (6, 4.5) {};
+\node[main, fill=blue!25] (h25) at (6, 6) {};
+
+\node[main, fill=green!35] (o1) at (9, 1.5) {};
+\node[main, fill=green!35] (o2) at (9, 3) {};
+\node[main, fill=green!35] (o3) at (9, 4.5) {};
+
+\draw[-] (i1) -- (h11);\draw[-] (i1) -- (h12);\draw[-] (i1) -- (h13);\draw[-] (i1) -- (h14);\draw[-] (i1) -- (h15);
+
+\draw[-] (i2) -- (h11);\draw[-] (i2) -- (h12);\draw[-] (i2) -- (h13);\draw[-] (i2) -- (h14);\draw[-] (i2) -- (h15);
+
+\draw[-] (i3) -- (h11);\draw[-] (i3) -- (h12);\draw[-] (i3) -- (h13);\draw[-] (i3) -- (h14);\draw[-] (i3) -- (h15);
+
+\draw[-] (i4) -- (h11);\draw[-] (i4) -- (h12);\draw[-] (i4) -- (h13);\draw[-] (i4) -- (h14);\draw[-] (i4) -- (h15);
+
+\draw[-] (h11) -- (h21);\draw[-] (h11) -- (h22);\draw[-] (h11) -- (h23);\draw[-] (h11) -- (h24);\draw[-] (h11) -- (h25);
+
+\draw[-] (h12) -- (h21);\draw[-] (h12) -- (h22);\draw[-] (h12) -- (h23);\draw[-] (h12) -- (h24);\draw[-] (h12) -- (h25);
+
+\draw[-] (h13) -- (h21);\draw[-] (h13) -- (h22);\draw[-] (h13) -- (h23);\draw[-] (h13) -- (h24);\draw[-] (h13) -- (h25);
+
+\draw[-] (h14) -- (h21);\draw[-] (h14) -- (h22);\draw[-] (h14) -- (h23);\draw[-] (h14) -- (h24);\draw[-] (h14) -- (h25);
+
+\draw[-] (h15) -- (h21);\draw[-] (h15) -- (h22);\draw[-] (h15) -- (h23);\draw[-] (h15) -- (h24);\draw[-] (h15) -- (h25);
+
+\draw[-] (o1) -- (h21);\draw[-] (o1) -- (h22);\draw[-] (o1) -- (h23);\draw[-] (o1) -- (h24);\draw[-] (o1) -- (h25);
+
+\draw[-] (o2) -- (h21);\draw[-] (o2) -- (h22);\draw[-] (o2) -- (h23);\draw[-] (o2) -- (h24);\draw[-] (o2) -- (h25);
+
+\draw[-] (o3) -- (h21);\draw[-] (o3) -- (h22);\draw[-] (o3) -- (h23);\draw[-] (o3) -- (h24);\draw[-] (o3) -- (h25);
+\end{tikzpicture}
+}
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Aufbau neuronaler Netze (3/3)}
+\begin{itemize}
+\item Berechnung der Ausgabe eines Neurons mit der Formel
+\[
+o_{i, j} = \varphi \left( \sum\limits_{k=0}^{|n_{i-1}| - 1} o_{i-1, k} * w_{i-1, k, j} \right)
+\]
+\begin{itemize}
+\item $n_{i, j}$: Neuron in der Schicht $i$ an der Stelle $j$
+\item $o_{i, j}$: Ausgabe des Neurons $n_{i, j}$
+\item $\varphi$: Differenzierbare Aktivierungsfunktion
+\item $|n_i|$: Anzahl der Neuronen in der Schicht $i$
+\item $w_{i, k, j}$: Synapsengewicht zwischen den Neuronen $n_{i, k}$ und $n_{i+1, j}$
+\end{itemize}
+\end{itemize}
+\end{frame}
 \end{document}
