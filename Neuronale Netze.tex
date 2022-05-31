@@ -5,6 +5,7 @@
 \usepackage{csquotes}
 \usepackage{hyperref}
 \usepackage{wrapfig}
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{tikz}
@@ -14,12 +15,24 @@
 \author{Jens Ostertag}
 \date{6. Juli 2022}
 
+\definecolor{presentationRed}{RGB}{164, 6, 11}
+
 \usetheme{CambridgeUS}
 \usecolortheme{beaver}
-
+\setbeamertemplate{itemize items}{\color{presentationRed}$\cdot$}
 
 \begin{document}
 \begin{frame}
 \titlepage
+\end{frame}
+
+\begin{frame}[t]{Allgemeines}
+Wo werden neuronale Netze angewendet?
+\begin{itemize}
+\item Straßenverkehr
+\item Medizinischer Bereich
+\item Industrie
+\item Soziale Netzwerke
+\end{itemize}
 \end{frame}
 \end{document}
