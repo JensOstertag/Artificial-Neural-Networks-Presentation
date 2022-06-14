@@ -45,6 +45,7 @@ Wo werden neuronale Netze angewendet?
 \end{itemize}
 \end{itemize}
 
+\vspace*{\fill}
 \begin{center}
 \scalebox{.75}{
 \begin{tikzpicture}[thick, main/.style={draw, circle, inner sep=0pt, minimum width=25pt}]
@@ -61,19 +62,21 @@ Wo werden neuronale Netze angewendet?
 \node[main, fill=blue!25] (c2) at (7, 0) {$n_{1, 0}$};
 \node (d2) at (9, 0) {\dots};
 
-\draw[dotted] (a1) -- (b2);
-\draw[dotted] (a2) -- (b2);
-\draw[dotted] (a3) -- (b2);
+\draw[-] (a1) -- (b2);
+\draw[-] (a2) -- (b2);
+\draw[-] (a3) -- (b2);
 
-\draw[dotted] (b1) -- (c2);
+\draw[-] (b1) -- (c2);
 \draw[-] (b2) -- (w1) -- (c2);
-\draw[dotted] (b3) -- (c2);
+\draw[-] (b3) -- (c2);
 
-\draw[dotted] (c2) -- (d2);
+\draw[-] (c2) -- (d2);
 \end{tikzpicture}
 }
 \end{center}
+\vspace*{\fill}
 \end{frame}
+
 \begin{frame}[t]{Aufbau neuronaler Netze (2/3)}
 \begin{itemize}
 \item Ausgaben von Neuronen und Synapsengewichte werden als Zahl betrachtet $\rightarrow$ Berechenbarkeit
@@ -85,6 +88,7 @@ Wo werden neuronale Netze angewendet?
 \end{itemize}
 \end{itemize}
 
+\vspace*{\fill}
 \begin{center}
 \scalebox{.5}{
 \begin{tikzpicture}[thick, main/.style={draw, circle, inner sep=0pt, minimum width=25pt}]
@@ -135,6 +139,7 @@ Wo werden neuronale Netze angewendet?
 \end{tikzpicture}
 }
 \end{center}
+\vspace*{\fill}
 \end{frame}
 
 \begin{frame}[t]{Aufbau neuronaler Netze (3/3)}
@@ -151,5 +156,182 @@ o_{i, j} = \varphi \left( \sum\limits_{k=0}^{|n_{i-1}| - 1} o_{i-1, k} * w_{i-1,
 \item $w_{i, k, j}$: Synapsengewicht zwischen den Neuronen $n_{i, k}$ und $n_{i+1, j}$
 \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Arten des maschinellen Lernens}
+\begin{itemize}
+\item Überwachtes Lernen
+\begin{itemize}
+\item Lernen mit einem vorgegebenen Datensatz
+\item Erkennen von Eigenschaften der Daten
+\item z.B. zur Klassifikation von Daten
+\end{itemize}
+\item Unüberwachtes Lernen
+\begin{itemize}
+\item Erkennen von Ähnlichkeiten in einer Datenmenge
+\item z.B. zur Gruppierung von Daten
+\end{itemize}
+\item Bestärktes Lernen
+\begin{itemize}
+\item Lernen mit einem Belohnungssystem
+\item z.B. zur Durchführung von Aufgaben
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Umgang mit neuronalen Netzen}
+Hier am Beispiel des überwachten Lernens
+\begin{itemize}
+\item Vorbereiten eines Trainingsdatensatzes
+\begin{itemize}
+\item Beispieldaten werden händisch klassifiziert
+\item Evtl. einheitliche Bearbeitung von Daten
+\item Erstellen eines Testdatensatzes zur Auswertung
+\end{itemize}
+\item Trainieren
+\begin{itemize}
+\item Trainieren mit unterschiedlichen Algorithmen
+\end{itemize}
+\item Auswertung und Anwendung
+\begin{itemize}
+\item Auswertung mithilfe des Testdatensatzes
+\item Exportieren der Netzstruktur und der Gewichte
+\item Importieren in Anwendung
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain,c]
+\begin{center}
+\Huge \color{presentationRed}Deep Convolutional Neural Networks\\[20pt]
+\large \color{black}am Beispiel der Bilderkennung
+\end{center}
+\end{frame}
+
+\begin{frame}[t]{Abwandlung der neuronalen Netze}
+Warum werden Convolutional Neural Networks benötigt?
+\begin{itemize}
+\item Zu lange Trainingsdauer
+\item Art und Weise der Erkennung eines Objekts
+\begin{itemize}
+\item Zwei Pixel-Paare sind gleich relevant, unabhängig von Entfernung
+\end{itemize}
+\item[\color{presentationRed}$\Rightarrow$] Risiko des \textbf{Overfittings}
+\end{itemize}
+Vorteile:
+\begin{itemize}
+\item Viel bessere Genauigkeit
+\begin{itemize}
+\item Lernvorgänge noch ähnlicher zu denen des Menschen
+\end{itemize}
+\item Schnelleres Training
+\begin{itemize}
+\item Weniger anzupassende Gewichte
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Convolution / Cross Correlation im eindimensionalen Raum}
+\[
+y_i = \sum\limits_{k=0}^{|w|-1} x_{i+k}*w_k
+\]
+\begin{itemize}
+\item \small$y_i$: Ausgabe an der Stelle $i$
+\item \small$x_i$: Eingabe an der Stelle $i$
+\item \small$w_i$: Wert des Kernels an der Stelle $i$
+\end{itemize}
+
+\vspace*{\fill}
+\begin{center}
+\scalebox{.6}{
+\begin{tikzpicture}[thick, main/.style={draw, rectangle, inner sep=0pt, minimum width=1cm, minimum height=1cm}]
+\node at (-1.5, .25) {$x$};
+\node[text=blue!50] at (-1, -.25) {$w$};
+\node at (-.5, -2.5) {$y$};
+
+\node[main] at (0, 0) {};
+\node[main] at (1, 0) {};
+\node[main] at (2, 0) {};
+\node[main] at (3, 0) {};
+\node[main] at (4, 0) {};
+
+\node[main, draw=blue!35, line width=.75mm] at (.25, -.25) {};
+\node[main, draw=blue!35, line width=.75mm] at (1.25, -.25) {};
+\node[main, draw=blue!35, line width=.75mm] at (2.25, -.25) {};
+
+\node[main, fill=blue!25] at (1, -2.5) {};
+\node[main] at (2, -2.5) {};
+\node[main] at (3, -2.5) {};
+
+\draw[dashed, draw=blue!25, line width=.5mm] (-.25, -.75) -- (.5, -3);
+\draw[dashed, draw=blue!25, line width=.5mm] (-.25, .25) -- (.5, -2);
+\draw[dashed, draw=blue!25, line width=.5mm] (2.75, -.75) -- (1.5, -3);
+\draw[dashed, draw=blue!25, line width=.5mm] (2.75, .25) -- (1.5, -2);
+\end{tikzpicture}}
+$\qquad$
+\scalebox{.6}{\begin{tikzpicture}[thick, main/.style={draw, rectangle, inner sep=0pt, minimum width=1cm, minimum height=1cm}]
+\node[main] at (0, 0) {};
+\node[main] at (1, 0) {};
+\node[main] at (2, 0) {};
+\node[main] at (3, 0) {};
+\node[main] at (4, 0) {};
+
+\node[main, draw=blue!35, line width=.75mm] at (1.25, -.25) {};
+\node[main, draw=blue!35, line width=.75mm] at (2.25, -.25) {};
+\node[main, draw=blue!35, line width=.75mm] at (3.25, -.25) {};
+
+\node[main] at (1, -2.5) {};
+\node[main, fill=blue!25] at (2, -2.5) {};
+\node[main] at (3, -2.5) {};
+
+\draw[dashed, draw=blue!25, line width=.5mm] (.75, -.75) -- (1.5, -3);
+\draw[dashed, draw=blue!25, line width=.5mm] (.75, .25) -- (1.5, -2);
+\draw[dashed, draw=blue!25, line width=.5mm] (3.75, -.75) -- (2.5, -3);
+\draw[dashed, draw=blue!25, line width=.5mm] (3.75, .25) -- (2.5, -2);
+\end{tikzpicture}}
+\end{center}
+\vspace*{\fill}
+\end{frame}
+
+\begin{frame}[t]{Padding}
+Problem: Ausgabe wird kleiner als Eingabe
+\begin{itemize}
+\item[\color{presentationRed}$\Rightarrow$] Detailverlust
+\end{itemize}
+Lösung: Eingabe mit Nullen erweitern
+
+\vspace*{\fill}
+\begin{center}
+\scalebox{.6}{
+\begin{tikzpicture}[thick, main/.style={draw, rectangle, inner sep=0pt, minimum width=1cm, minimum height=1cm}]
+\node at (-2.5, .25) {$x^p$};
+\node[text=blue!50] at (-2, -.25) {$w$};
+\node at (-1.5, -2.5) {$y$};
+
+\node[main, dotted] at (-1, 0) {$0$};
+\node[main] at (0, 0) {};
+\node[main] at (1, 0) {};
+\node[main] at (2, 0) {};
+\node[main] at (3, 0) {};
+\node[main] at (4, 0) {};
+\node[main, dotted] at (5, 0) {$0$};
+
+\node[main, draw=blue!35, line width=.75mm] at (-.75, -.25) {};
+\node[main, draw=blue!35, line width=.75mm] at (.25, -.25) {};
+\node[main, draw=blue!35, line width=.75mm] at (1.25, -.25) {};
+
+\node[main, fill=blue!25] at (0, -2.5) {};
+\node[main] at (1, -2.5) {};
+\node[main] at (2, -2.5) {};
+\node[main] at (3, -2.5) {};
+\node[main] at (4, -2.5) {};
+
+\draw[dashed, draw=blue!25, line width=.5mm] (-1.25, -.75) -- (-.5, -3);
+\draw[dashed, draw=blue!25, line width=.5mm] (-1.25, .25) -- (-.5, -2);
+\draw[dashed, draw=blue!25, line width=.5mm] (1.75, -.75) -- (.5, -3);
+\draw[dashed, draw=blue!25, line width=.5mm] (1.75, .25) -- (.5, -2);
+\end{tikzpicture}}
+\end{center}
+\vspace*{\fill}
 \end{frame}
 \end{document}
