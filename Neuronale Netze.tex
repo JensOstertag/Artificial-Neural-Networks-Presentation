@@ -334,4 +334,103 @@ Lösung: Eingabe mit Nullen erweitern
 \end{center}
 \vspace*{\fill}
 \end{frame}
+
+\begin{frame}[t]{Convolution / Cross Correlation im zweidimensionalen Raum}
+\vspace*{\fill}
+\begin{center}
+\scalebox{.6}{
+\begin{tikzpicture}
+\node at (2.5, 1.5) {$X^p$};
+\node[text=blue!50] at (.75, 2) {$W$};
+\node at (9.5, 1) {$Y$};
+\draw[-] (0, 0) -- (5, -1) -- (5, -6) -- (0, -5) -- (0, 0);
+\draw[-] (0, -1) -- (5, -2);
+\draw[-] (0, -2) -- (5, -3);
+\draw[-] (0, -3) -- (5, -4);
+\draw[-] (0, -4) -- (5, -5);
+\draw[-] (1, -.2) -- (1, -5.2);
+\draw[-] (2, -.4) -- (2, -5.4);
+\draw[-] (3, -.6) -- (3, -5.6);
+\draw[-] (4, -.8) -- (4, -5.8);
+\draw[dotted] (-1, 1.2) -- (6, -.2) -- (6, -7.2) -- (-1, -5.8) -- (-1, 1.2);
+\draw[dotted] (0, 1) -- (0, -6);
+\draw[dotted] (1, .8) -- (1, -6.2);
+\draw[dotted] (2, .6) -- (2, -6.4);
+\draw[dotted] (3, .4) -- (3, -6.6);
+\draw[dotted] (4, .2) -- (4, -6.8);
+\draw[dotted] (5, 0) -- (5, -7);
+\draw[dotted] (-1, .2) -- (6, -1.2);
+\draw[dotted] (-1, -.8) -- (6, -2.2);
+\draw[dotted] (-1, -1.8) -- (6, -3.2);
+\draw[dotted] (-1, -2.8) -- (6, -4.2);
+\draw[dotted] (-1, -3.8) -- (6, -5.2);
+\draw[dotted] (-1, -4.8) -- (6, -6.2);
+\node at (-.5, .6) {$0$};
+\node at (.5, .4) {$0$};
+\node at (1.5, .2) {$0$};
+\node at (2.5, 0) {$0$};
+\node at (3.5, -.2) {$0$};
+\node at (4.5, -.4) {$0$};
+\node at (5.5, -.6) {$0$};
+\node at (5.5, -1.6) {$0$};
+\node at (5.5, -2.6) {$0$};
+\node at (5.5, -3.6) {$0$};
+\node at (5.5, -4.6) {$0$};
+\node at (5.5, -5.6) {$0$};
+\node at (5.5, -6.6) {$0$};
+\node at (4.5, -6.4) {$0$};
+\node at (3.5, -6.2) {$0$};
+\node at (2.5, -6) {$0$};
+\node at (1.5, -5.8) {$0$};
+\node at (.5, -5.6) {$0$};
+\node at (-.5, -5.4) {$0$};
+\node at (-.5, -4.4) {$0$};
+\node at (-.5, -3.4) {$0$};
+\node at (-.5, -2.4) {$0$};
+\node at (-.5, -1.4) {$0$};
+\node at (-.5, -.4) {$0$};
+\draw[-, draw=blue!35, line width=.75mm] (-.75, .95) -- (2.25, .35) -- (2.25, -2.65) -- (-.75, -2.05) -- (-.75, .95);
+\draw[-, draw=blue!35, line width=.75mm] (.25, .75) -- (.25, -2.25);
+\draw[-, draw=blue!35, line width=.75mm] (1.25, .55) -- (1.25, -2.45);
+\draw[-, draw=blue!35, line width=.75mm] (-.75, -.05) -- (2.25, -.65);
+\draw[-, draw=blue!35, line width=.75mm] (-.75, -1.05) -- (2.25, -1.65);
+\fill[fill=blue!25] (7, 0) -- (8, -.2) -- (8, -1.2) -- (7, -1);
+\draw[-] (7, 0) -- (12, -1) -- (12, -6) -- (7, -5) -- (7, 0);
+\draw[-] (7, -1) -- (12, -2);
+\draw[-] (7, -2) -- (12, -3);
+\draw[-] (7, -3) -- (12, -4);
+\draw[-] (7, -4) -- (12, -5);
+\draw[-] (8, -.2) -- (8, -5.2);
+\draw[-] (9, -.4) -- (9, -5.4);
+\draw[-] (10, -.6) -- (10, -5.6);
+\draw[-] (11, -.8) -- (11, -5.8);
+\draw[dashed, draw=blue!25, line width=.5mm] (-.75, .95) -- (7, 0);
+\draw[dashed, draw=blue!25, line width=.5mm] (2.25, .35) -- (8, -.2);
+\draw[dashed, draw=blue!25, line width=.5mm] (2.25, -2.65) -- (8, -1.2);
+\draw[dashed, draw=blue!25, line width=.5mm] (-.75, -2.05) -- (7, -1);
+\end{tikzpicture}
+}
+\end{center}
+\vspace*{\fill}
+\end{frame}
+
+\begin{frame}[t]{Convolutional Layer}
+
+\end{frame}
+
+\begin{frame}[t]{Subsampling}
+
+\end{frame}
+
+\begin{frame}[t]{Aufbau eines Convolutional Neural Networks}
+
+\end{frame}
+
+\begin{frame}[t]{Trainingsablauf}
+
+\end{frame}
+
+\begin{frame}[t]{Praxisbeispiel}
+
+\end{frame}
 \end{document}
