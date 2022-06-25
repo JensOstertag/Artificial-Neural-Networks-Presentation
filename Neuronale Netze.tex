@@ -147,6 +147,8 @@ Wo werden neuronale Netze angewendet?
 \end{frame}
 
 \begin{frame}[t]{\insertsubsection}
+\vspace*{\fill}
+\myexample{Berechnung der Ausgabe}{
 \[
 o_{i, j} = \varphi \left( \sum\limits_{k=0}^{|n_{i-1}| - 1} o_{i-1, k} * w_{i-1, k, j} \right)
 \]
@@ -157,6 +159,8 @@ o_{i, j} = \varphi \left( \sum\limits_{k=0}^{|n_{i-1}| - 1} o_{i-1, k} * w_{i-1,
 \item $|n_i|$: Anzahl der Neuronen in der Schicht $i$
 \item $w_{i, k, j}$: Synapsengewicht zwischen den Neuronen $n_{i, k}$ und $n_{i+1, j}$
 \end{itemize}
+}
+\vspace*{\fill}
 \end{frame}
 
 \subsection{Arten des maschinellen Lernens}
@@ -231,6 +235,7 @@ Vorteile:
 
 \subsection{Convolution / Cross Correlation im eindimensionalen Raum}
 \begin{frame}[t]{\insertsubsection}
+\myexample{Berechnung der Cross Correlation}{
 \[
 y_i = \sum\limits_{k=0}^{|w|-1} x_{i+k}*w_k
 \]
@@ -239,6 +244,7 @@ y_i = \sum\limits_{k=0}^{|w|-1} x_{i+k}*w_k
 \item \small$x_i$: Eingabe an der Stelle $i$
 \item \small$w_i$: Wert des Kernels an der Stelle $i$
 \end{itemize}
+}
 
 \vspace*{\fill}
 \begin{center}
